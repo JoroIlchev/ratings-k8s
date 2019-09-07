@@ -2,13 +2,13 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: mysql-pv-volume
-  labels:
-    type: local
 spec:
-  storageClassName: manual
-  capacity:
-    storage: 1Gi
   accessModes:
     - ReadWriteOnce
+  capacity:
+    storage: 1Gi
   hostPath:
-    path: "~/personal/mnt/data"
+    path: /tmp/data
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  volumeMode: Filesystem
