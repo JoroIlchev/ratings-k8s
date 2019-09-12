@@ -1,7 +1,7 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: mysql
+  name: mysql-delployment
 spec:
   selector:
     matchLabels:
@@ -17,9 +17,11 @@ spec:
         - image: mysql:5.6
           name: mysql
           env:
-            # Use secret in real usage
             - name: MYSQL_ROOT_PASSWORD
-              value: topsecret
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-credentials
+                  key: password
           ports:
             - containerPort: 3306
               name: mysql
@@ -30,3 +32,6 @@ spec:
         - name: mysql-persistent-storage
           persistentVolumeClaim:
             claimName: mysql-pv-claim
+        - name: mysql-credentials
+          secret:
+            secretName: mysql-credentials
