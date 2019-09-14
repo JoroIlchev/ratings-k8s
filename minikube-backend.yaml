@@ -6,13 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ratings
-      component: backend
+      app: ratings-backend
   template:
     metadata:
       labels:
-        app: ratings
-        component: backend
+        app: ratings-backend
       annotations:
         balev.eu/author: "Lachezar Balev"
     spec:
