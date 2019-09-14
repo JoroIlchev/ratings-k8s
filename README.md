@@ -8,6 +8,10 @@ Build a docker image of the backend service:
 
 `docker build -t luchob/ratings-service -f deployment/Dockerfile .`
 
+Build a docker image of the frontend service:
+
+`docker build -t luchob/ratings-frontend -f deployment/Dockerfile .`
+
 Run busy box within the cluster:
 
 `kubectl run -i --tty busybox --image=busybox --restart=Never -- sh`
