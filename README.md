@@ -23,3 +23,9 @@ Run mysql client within the cluster:
 Reuse the docker daemon locally:
 
 `eval $(minikube docker-env)`
+
+Pushing the services in docker hub:
+
+`docker login`
+
+`docker push luchob/ratings-service:v1`
