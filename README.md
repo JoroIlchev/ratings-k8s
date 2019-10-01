@@ -4,6 +4,8 @@ Set of k8s objects that will be potentially used in a Java2days presentation.
 
 # Useful commands
 
+## Docker
+
 Build a docker image of the backend service:
 
 `docker build -t luchob/ratings-service -f deployment/Dockerfile .`
@@ -11,6 +13,14 @@ Build a docker image of the backend service:
 Build a docker image of the frontend service:
 
 `docker build -t luchob/ratings-frontend -f deployment/Dockerfile .`
+
+Push the docker to the docker hub.
+
+`docker login`
+
+`docker push luchob/ratings-service:v1`
+
+## Kubectl
 
 Run busy box within the cluster:
 
@@ -20,12 +30,16 @@ Run mysql client within the cluster:
 
 `kubectl run -i --tty mysql-client --image=imega/mysql-client --restart=Never -- sh`
 
+Use the java2days namespace as default
+
+`kubectl config set-context --current --namespace=java2days`
+
+Remove an annotation from pvc
+
+`kubectl patch pvc java2days-mysql-pvc -p '{"metadata":{"finalizers":null}}'`
+
+## Minikube
+
 Reuse the docker daemon locally:
 
 `eval $(minikube docker-env)`
-
-Pushing the services in docker hub:
-
-`docker login`
-
-`docker push luchob/ratings-service:v1`

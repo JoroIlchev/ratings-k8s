@@ -1,7 +1,8 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: mysql-deployment
+  name: java2days-mysql-delployment
+  namespace: java2days
 spec:
   selector:
     matchLabels:
@@ -20,7 +21,7 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: mysql-credentials
+                  name: java2days-mysql-credentials
                   key: password
           ports:
             - containerPort: 3306
@@ -31,4 +32,4 @@ spec:
       volumes:
         - name: mysql-persistent-storage
           persistentVolumeClaim:
-            claimName: mysql-pv-claim
+            claimName: java2days-mysql-pvc

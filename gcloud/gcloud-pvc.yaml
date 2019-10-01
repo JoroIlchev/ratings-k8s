@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pv-volume
+  name: java2days-mysql-pvc
   namespace: java2days
 spec:
   accessModes:
