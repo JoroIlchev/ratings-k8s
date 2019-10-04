@@ -24,7 +24,7 @@ Push the docker to the docker hub.
 
 Run busy box within the cluster:
 
-`kubectl run -i --tty busybox --image=busybox --restart=Never -- sh`
+`kubectl run my-shell --restart=Never --rm -i --tty --image amouat/network-utils -- bash`
 
 Run mysql client within the cluster:
 

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: java2days-ratings-config
+  namespace: java2days
+data:
+  mysql.host: "java2days-mysql-service"
+  mysql.port: "3306"
+  mysql.user: "root"

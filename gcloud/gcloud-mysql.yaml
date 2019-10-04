@@ -6,13 +6,13 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: mysql
+      app: java2days-mysql
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: mysql
+        app: java2days-mysql
     spec:
       containers:
         - image: mysql:5.6
