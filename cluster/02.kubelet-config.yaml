@@ -1,0 +1,4 @@
+apiVersion: kubelet.config.k8s.io/v1beta1
+kind: KubeletConfiguration
+staticPodPath: /home/vagrant/k8s/manifests/
+failSwapOn: false
