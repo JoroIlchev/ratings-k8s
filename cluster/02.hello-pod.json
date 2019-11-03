@@ -1,0 +1,40 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "name": "nginx"
+  },
+  "spec": {
+    "nodeName": "vagrant",
+    "containers": [
+    {
+      "name": "nginx",
+      "image": "nginxdemos/hello:plain-text",
+      "ports": [
+      {
+        "containerPort": 80,
+        "name": "server-port"
+      }
+      ],
+      "livenessProbe": {
+        "httpGet": {
+          "path": "/",
+          "port": 80
+        },
+        "initialDelaySeconds": 15,
+        "periodSeconds": 15,
+        "timeoutSeconds": 3
+      },
+      "readinessProbe": {
+        "httpGet": {
+          "path": "/",
+          "port": 80
+        },
+        "initialDelaySeconds": 15,
+        "periodSeconds": 15,
+        "timeoutSeconds": 3
+      }
+    }
+    ]
+  }
+}
