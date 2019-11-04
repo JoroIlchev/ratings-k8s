@@ -1,6 +1,5 @@
 kind: KubeletConfiguration
 apiVersion: kubelet.config.k8s.io/v1beta1
-staticPodURL: http://localhost:8080
 failSwapOn: false
 authentication:
   anonymous:
