@@ -1,8 +1,9 @@
 # ratings-k8s
 
 Set of k8s objects that will be potentially used in a Java2days presentation.
+[Code monsters 2019.](https://2019.codemonsters.pro/)
 
-# Useful commands
+# A set of useful commands
 
 ## Docker
 

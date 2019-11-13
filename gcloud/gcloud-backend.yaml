@@ -13,7 +13,7 @@ spec:
       labels:
         app: java2days-ratings-backend
       annotations:
-        balev.eu/author: "Lachezar Balev"
+        balev.eu/author: "Lachezar Balev, Georgi Peychev"
     spec:
       containers:
         - name: java2days-ratings-backend
