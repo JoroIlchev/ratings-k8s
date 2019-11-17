@@ -7,9 +7,8 @@ kubectl apply -f gcloud-mysql-service.yaml
 kubectl apply -f gcloud-config.yaml
 kubectl apply -f gcloud-backend.yaml
 kubectl apply -f gcloud-backend-service.yaml
-kubectl apply -f gcloud-ingress.yaml
-
-
-
-
+kubectl apply -f gcloud-backend-ingress.yaml
+kubectl apply -f gcloud-frontend.yaml
+kubectl apply -f gcloud-frontend-service.yaml
+kubectl apply -f gcloud-frontend-ingress.yaml
 

@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: java2days-ingress
+  name: java2days-ingress-backend
   namespace: java2days
 spec:
   rules:

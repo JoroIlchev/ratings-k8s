@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: java2days-ingress-frontend
+  namespace: java2days
+spec:
+  rules:
+    - host: ratings-frontend.service.dev.ffp-dev.com
+      http:
+        paths:
+          - backend:
+              serviceName: java2days-ratings-frontend-service
+              servicePort: 80
+            path: /*

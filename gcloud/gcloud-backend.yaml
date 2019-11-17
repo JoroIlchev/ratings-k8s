@@ -18,6 +18,7 @@ spec:
       containers:
         - name: java2days-ratings-backend
           image: luchob/ratings-service:v1
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
               name: server-port

@@ -9,7 +9,7 @@ Set of k8s objects that will be potentially used in a Java2days presentation.
 
 Build a docker image of the backend service:
 
-`docker build -t luchob/ratings-service -f deployment/Dockerfile .`
+`docker build -t luchob/ratings-service:v1 -f deployment/Dockerfile .`
 
 Build a docker image of the frontend service:
 

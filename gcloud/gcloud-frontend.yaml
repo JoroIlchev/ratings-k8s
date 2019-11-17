@@ -1,0 +1,40 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: java2days-ratings-frontend
+  namespace: java2days
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: java2days-ratings-frontend
+  template:
+    metadata:
+      labels:
+        app: java2days-ratings-frontend
+      annotations:
+        java2days.com/author: "Lachezar Balev, Georgi Peychev"
+    spec:
+      containers:
+        - name: java2days-ratings-frontend
+          image: luchob/ratings-frontend:v1
+          ports:
+            - containerPort: 80
+              name: server-port
+          livenessProbe:
+            httpGet:
+              path: /admin/healthcheck
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          readinessProbe:
+            httpGet:
+              path: /admin/healthcheck
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 20
+            timeoutSeconds: 5
+            successThreshold: 1
+            failureThreshold: 5
