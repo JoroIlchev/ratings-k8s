@@ -4,7 +4,7 @@ metadata:
   name: java2days-ratings-backend
   namespace: java2days
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: java2days-ratings-backend
