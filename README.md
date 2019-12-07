@@ -13,13 +13,19 @@ Build a docker image of the backend service:
 
 Build a docker image of the frontend service:
 
-`docker build -t luchob/ratings-frontend -f deployment/Dockerfile .`
+`docker build -t luchob/ratings-frontend:v1 -f deployment/Dockerfile .`
 
 Push the docker to the docker hub.
 
 `docker login`
 
 `docker push luchob/ratings-service:v1`
+
+`docker push luchob/ratings-frontend:v1`
+
+## Build the frontend service
+
+`npm run build-deployment`
 
 ## Kubectl
 
@@ -44,3 +50,13 @@ Remove an annotation from pvc
 Reuse the docker daemon locally:
 
 `eval $(minikube docker-env)`
+
+## GCloud
+
+Get current project
+
+`gcloud config get-value project`
+
+Get persistent disks
+
+`gcloud compute disks list`
