@@ -5,7 +5,7 @@ metadata:
   namespace: java2days
 spec:
   rules:
-    - host: ratings.service.dev.ffp-dev.com
+    - host: ratings.service.int.refill-gcp.com
       http:
         paths:
           - backend:

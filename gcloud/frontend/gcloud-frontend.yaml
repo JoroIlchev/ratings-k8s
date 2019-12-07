@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: java2days-ratings-frontend
-          image: luchob/ratings-frontend:v1
+          image: luchob/ratings-frontend:v1-int
           ports:
             - containerPort: 80
               name: server-port
